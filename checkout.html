@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Rit Motor Sales & Services</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <!-- SEO (noindex — checkout is transactional) -->
+  <meta name="description" content="Complete your electric vehicle purchase from Rit Motor Sales & Services via UPI payment.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rit Motor Sales & Services">
+  <meta property="og:title" content="Checkout | Rit Motor Sales & Services">
+  <meta property="og:description" content="Secure UPI payment for your electric vehicle purchase.">
+  <meta name="theme-color" content="#22C55E">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FFFFFF;
+      --blue:         #3B82F6;
+      --blue-dark:    #2563EB;
+      --mint:         #22C55E;
+      --mint-dark:    #16A34A;
+      --text:         #111827;
+      --text-muted:   #6B7280;
+      --glass-bg:     rgba(255,255,255,0.7);
+      --glass-border: rgba(0,0,0,0.06);
+      --shadow:       0 4px 20px rgba(0,0,0,0.06);
+      --shadow-lg:    0 8px 32px rgba(37,99,235,0.12);
+      --blur:         blur(20px);
+      --radius:       28px;
+      --spring:       cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+      opacity: 0.06;
+    }
+    body::before {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    body::after {
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, #22C55E 0%, transparent 70%);
+      bottom: 0; left: -120px;
+    }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: fixed;
+      top: 16px; left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 1200px;
+      z-index: 1000;
+      background: rgba(245,247,250,0.6);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(245,247,250,0.88);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    }
+
+    .nav-logo {
+      font-weight: 800; font-size: 1rem;
+      color: var(--text); text-decoration: none;
+      letter-spacing: -0.3px; white-space: nowrap;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo .logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo .logo-icon svg { width: 18px; height: 18px; }
+    .nav-logo span { color: var(--blue); }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      color: var(--text); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 100px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    .nav-back:hover { transform: scale(1.03); background: rgba(255,255,255,0.8); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    /* ─── MAIN LAYOUT ─── */
+    .checkout-wrapper {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 116px 24px 80px;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 960px;
+      align-items: start;
+    }
+
+    /* ─── GLASS CARD ─── */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .glass-card.fade-in {
+      animation: cardFadeIn 0.75s var(--spring) forwards;
+    }
+    .glass-card.fade-in.delay-1 { animation-delay: 0.15s; }
+    .glass-card.fade-in.delay-2 { animation-delay: 0.3s; }
+
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-header {
+      padding: 24px 26px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .card-header-icon {
+      width: 40px; height: 40px; border-radius: 13px;
+      background: linear-gradient(135deg, var(--blue), #6B8EFF);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-header-icon svg {
+      width: 20px; height: 20px;
+      stroke: #fff; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .card-header-icon.green { background: linear-gradient(135deg, var(--mint), var(--mint-dark)); }
+    .card-header h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.2px; }
+    .card-header p { font-size: 0.78rem; color: var(--text-muted); margin-top: 1px; }
+
+    .card-body { padding: 22px 26px; }
+
+    /* ─── ORDER SUMMARY ─── */
+    .product-row {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 18px;
+      margin-bottom: 20px;
+    }
+    .product-emoji {
+      font-size: 2.4rem;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(74,158,255,0.1), rgba(52,211,153,0.1));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .product-info { flex: 1; min-width: 0; }
+    .product-name {
+      font-size: 0.92rem; font-weight: 700;
+      letter-spacing: -0.2px; margin-bottom: 3px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .product-cat {
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--blue); letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .product-row-price {
+      font-size: 1rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; flex-shrink: 0;
+    }
+
+    /* Qty control */
+    .qty-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .qty-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+    .qty-control {
+      display: flex; align-items: center; gap: 0;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px; overflow: hidden;
+    }
+    .qty-btn {
+      width: 34px; height: 34px;
+      border: none; background: none; cursor: pointer;
+      font-size: 1.1rem; font-weight: 600; color: var(--text);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .qty-btn:hover { background: rgba(74,158,255,0.1); }
+    .qty-val {
+      font-size: 0.9rem; font-weight: 700;
+      padding: 0 14px; min-width: 36px; text-align: center;
+    }
+
+    /* Price breakdown */
+    .price-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0;
+    }
+    .price-row + .price-row { border-top: 1px solid rgba(255,255,255,0.5); }
+    .price-key { font-size: 0.85rem; color: var(--text-muted); }
+    .price-val-sm { font-size: 0.85rem; font-weight: 600; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(74,158,255,0.2), transparent);
+      margin: 14px 0;
+    }
+
+    .total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 16px;
+      background: rgba(74,158,255,0.06);
+      border: 1px solid rgba(74,158,255,0.15);
+      border-radius: 16px;
+      margin-top: 10px;
+    }
+    .total-label {
+      font-size: 0.95rem; font-weight: 700;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .total-label svg {
+      width: 16px; height: 16px;
+      stroke: var(--blue); fill: none; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .total-amount {
+      font-size: 1.35rem; font-weight: 800; letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--blue), #6B8EFF);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .edit-link {
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+      margin-top: 16px;
+      font-size: 0.78rem; color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .edit-link:hover { color: var(--blue); }
+    .edit-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ─── PAYMENT CARD ─── */
+    .upi-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(74,158,255,0.08);
+      border: 1px solid rgba(74,158,255,0.2);
+      padding: 7px 16px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--blue); letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+    .upi-badge .upi-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--mint);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+
+    .upi-id-pill {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: rgba(245,247,250,0.8);
+      border: 1px solid rgba(200,210,220,0.6);
+      border-radius: 14px; padding: 12px 16px;
+      margin-bottom: 22px;
+    }
+    .upi-id-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 3px; }
+    .upi-id-value { font-size: 0.92rem; font-weight: 700; color: var(--text); font-family: monospace; }
+    .copy-btn {
+      display: flex; align-items: center; gap: 5px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px; padding: 7px 12px;
+      font-size: 0.72rem; font-weight: 700; color: var(--blue);
+      cursor: pointer; transition: background 0.2s, transform 0.2s;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .copy-btn:hover { background: rgba(74,158,255,0.1); transform: scale(1.04); }
+    .copy-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .copy-btn.copied { color: var(--mint-dark); }
+
+    /* QR code */
+    .qr-wrapper {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 22px;
+    }
+    .qr-frame {
+      width: 200px; height: 200px;
+      background: #fff;
+      border: 1px solid rgba(200,210,220,0.5);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+      margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .qr-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
+
+    /* Action buttons */
+    .btn-upi {
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--blue), #6B8EFF);
+      color: #fff; text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      padding: 15px 24px; border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(74,158,255,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      letter-spacing: -0.1px;
+    }
+    .btn-upi:hover { transform: scale(1.03); box-shadow: 0 10px 32px rgba(74,158,255,0.5); }
+    .btn-upi svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .or-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 18px 0;
+    }
+    .or-divider::before, .or-divider::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(74,158,255,0.2), transparent);
+    }
+    .or-text {
+      font-size: 0.75rem; color: var(--text-muted); font-weight: 600;
+      white-space: nowrap; letter-spacing: 0.2px;
+    }
+
+    .btn-whatsapp {
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+      color: #fff; text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      padding: 15px 24px; border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(52,211,153,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      letter-spacing: -0.1px;
+    }
+    .btn-whatsapp:hover { transform: scale(1.03); box-shadow: 0 10px 32px rgba(52,211,153,0.5); }
+    .btn-whatsapp svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
+
+    .confirm-note {
+      display: flex; align-items: flex-start; gap: 9px;
+      background: rgba(52,211,153,0.06);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 14px; padding: 12px 14px; margin-top: 16px;
+    }
+    .confirm-note svg {
+      width: 16px; height: 16px; flex-shrink: 0;
+      stroke: var(--mint-dark); fill: none; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+      margin-top: 1px;
+    }
+    .confirm-note p {
+      font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .confirm-note strong { color: var(--text); font-weight: 700; }
+
+    /* Trust badges */
+    .trust-row {
+      display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;
+    }
+    .trust-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 5px 11px; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
+    }
+
+    /* Steps indicator */
+    .steps-bar {
+      display: flex; align-items: center; gap: 0;
+      padding: 0 26px 20px;
+    }
+    .step {
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      flex: 1;
+    }
+    .step-circle {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 800;
+      transition: background 0.3s, color 0.3s;
+    }
+    .step-circle.done {
+      background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+      color: #fff;
+    }
+    .step-circle.active {
+      background: linear-gradient(135deg, var(--blue), #6B8EFF);
+      color: #fff; box-shadow: 0 4px 14px rgba(74,158,255,0.4);
+    }
+    .step-circle.pending {
+      background: rgba(255,255,255,0.6);
+      border: 1.5px solid rgba(200,210,220,0.7);
+      color: var(--text-muted);
+    }
+    .step-label {
+      font-size: 0.65rem; font-weight: 600; color: var(--text-muted);
+      text-align: center; line-height: 1.2;
+    }
+    .step-label.active { color: var(--blue); }
+    .step-connector {
+      flex: 1; height: 2px;
+      background: linear-gradient(90deg, rgba(74,158,255,0.15), rgba(74,158,255,0.15));
+      margin-bottom: 20px; border-radius: 2px; max-width: 40px;
+    }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #34D399;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(52,211,153,0.45);
+      text-decoration: none;
+      animation: waBounceIn 0.9s var(--spring) 1s both, waPulse 2s ease-in-out 2.2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 14px 40px rgba(52,211,153,0.65) !important;
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    @keyframes waBounceIn {
+      0%   { opacity: 0; transform: scale(0.3) translateY(30px); }
+      60%  { opacity: 1; transform: scale(1.12); }
+      80%  { transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes waPulse {
+      0%, 100% { transform: scale(1);    box-shadow: 0 8px 28px rgba(52,211,153,0.45); }
+      50%       { transform: scale(1.08); box-shadow: 0 12px 36px rgba(52,211,153,0.6); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .checkout-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .checkout-wrapper { padding: 100px 16px 64px; align-items: flex-start; }
+      .qr-frame { width: 170px; height: 170px; }
+    }
+    @media (max-width: 480px) {
+      .steps-bar { padding: 0 16px 16px; }
+      .card-header { padding: 20px 20px 16px; }
+      .card-body { padding: 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <span>Rit Motor</span>&nbsp;Sales &amp; Services
+    </a>
+
+    <a href="products.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Products
+    </a>
+  </nav>
+
+  <!-- ─── CHECKOUT ─── -->
+  <div class="checkout-wrapper">
+    <div class="checkout-grid">
+
+      <!-- ══ LEFT: ORDER SUMMARY ══ -->
+      <div class="glass-card fade-in delay-1">
+
+        <!-- Steps -->
+        <div class="steps-bar" style="padding-top:22px">
+          <div class="step">
+            <div class="step-circle done">✓</div>
+            <div class="step-label">Select</div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-circle active">2</div>
+            <div class="step-label active">Pay</div>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step">
+            <div class="step-circle pending">3</div>
+            <div class="step-label">Confirm</div>
+          </div>
+        </div>
+
+        <div class="card-header">
+          <div class="card-header-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </div>
+          <div>
+            <h2>Order Summary</h2>
+            <p>Review your selected vehicle</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <!-- Product row -->
+          <div class="product-row">
+            <div class="product-emoji" id="productEmoji">🛺</div>
+            <div class="product-info">
+              <div class="product-name" id="productName">Saarthi Plus Passenger Rickshaw</div>
+              <div class="product-cat" id="productCat">E-Rickshaw · Passenger</div>
+            </div>
+            <div class="product-row-price" id="productBasePrice">₹1.10 Lakh</div>
+          </div>
+
+          <!-- Quantity -->
+          <div class="qty-row">
+            <span class="qty-label">Quantity</span>
+            <div class="qty-control">
+              <button class="qty-btn" id="qtyMinus" aria-label="Decrease">−</button>
+              <span class="qty-val" id="qtyVal">1</span>
+              <button class="qty-btn" id="qtyPlus" aria-label="Increase">+</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Price breakdown -->
+          <div class="price-row">
+            <span class="price-key">Base price</span>
+            <span class="price-val-sm" id="displayBase">₹1,10,000</span>
+          </div>
+          <div class="price-row">
+            <span class="price-key">GST (12%)</span>
+            <span class="price-val-sm" id="displayGst">₹13,200</span>
+          </div>
+          <div class="price-row">
+            <span class="price-key">Delivery &amp; handling</span>
+            <span class="price-val-sm" style="color:var(--mint-dark);font-weight:700">FREE</span>
+          </div>
+
+          <!-- Total -->
+          <div class="total-row">
+            <div class="total-label">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Total Payable
+            </div>
+            <div class="total-amount" id="displayTotal">₹1,23,200</div>
+          </div>
+
+          <a href="products.html" class="edit-link">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Change product
+          </a>
+        </div>
+      </div>
+
+      <!-- ══ RIGHT: PAYMENT ══ -->
+      <div class="glass-card fade-in delay-2">
+
+        <div class="card-header">
+          <div class="card-header-icon green">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <h2>Pay via UPI</h2>
+            <p>Instant · Secure · No charges</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <div class="upi-badge">
+            <span class="upi-dot"></span>
+            UPI Payment Active
+          </div>
+
+          <!-- UPI ID pill -->
+          <div class="upi-id-pill">
+            <div>
+              <div class="upi-id-label">UPI ID</div>
+              <div class="upi-id-value" id="upiIdDisplay">ritmotorsales@upi</div>
+            </div>
+            <button class="copy-btn" id="copyUpiBtn" onclick="copyUPI()">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+
+          <!-- QR Code -->
+          <div class="qr-wrapper">
+            <div class="qr-frame">
+              <!-- Realistic QR code SVG placeholder -->
+              <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <!-- Top-left position marker -->
+                <rect x="8"  y="8"  width="46" height="46" rx="5" fill="none" stroke="#1A1A2E" stroke-width="5.5"/>
+                <rect x="18" y="18" width="26" height="26" rx="3" fill="#1A1A2E"/>
+                <!-- Top-right position marker -->
+                <rect x="126" y="8"  width="46" height="46" rx="5" fill="none" stroke="#1A1A2E" stroke-width="5.5"/>
+                <rect x="136" y="18" width="26" height="26" rx="3" fill="#1A1A2E"/>
+                <!-- Bottom-left position marker -->
+                <rect x="8"  y="126" width="46" height="46" rx="5" fill="none" stroke="#1A1A2E" stroke-width="5.5"/>
+                <rect x="18" y="136" width="26" height="26" rx="3" fill="#1A1A2E"/>
+                <!-- Timing patterns -->
+                <rect x="64" y="8"  width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="76" y="8"  width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="8"  width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="64" y="20" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="20" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="8"  y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="8"  y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="8"  y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="20" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="20" y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <!-- Data modules (randomized pattern) -->
+                <rect x="64" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="76" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="100" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="112" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="64" y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="112" y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="76" y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="100" y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="64" y="100" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="100" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="112" y="100" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="76" y="112" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="112" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="100" y="112" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="126" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="138" y="64" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="126" y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="150" y="76" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="138" y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="150" y="88" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="126" y="100" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="138" y="100" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="64" y="126" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="126" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="112" y="126" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="76" y="138" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="100" y="138" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="126" y="126" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="150" y="126" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="64" y="150" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="88" y="150" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="100" y="150" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="138" y="138" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <rect x="150" y="150" width="6" height="6" fill="#1A1A2E" rx="1"/>
+                <!-- Center logo hint -->
+                <rect x="78" y="78" width="24" height="24" rx="5" fill="white"/>
+                <rect x="81" y="81" width="18" height="18" rx="4" fill="url(#qrGrad)"/>
+                <defs>
+                  <linearGradient id="qrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stop-color="#4A9EFF"/>
+                    <stop offset="100%" stop-color="#34D399"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p class="qr-label">Scan with any UPI app to pay</p>
+          </div>
+
+          <!-- Open UPI App button -->
+          <a href="#" class="btn-upi" id="upiDeepLink">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            Open UPI App
+          </a>
+
+          <!-- Divider -->
+          <div class="or-divider">
+            <span class="or-text">then confirm your order</span>
+          </div>
+
+          <!-- WhatsApp screenshot button -->
+          <a href="#" class="btn-whatsapp" id="waScreenshotBtn">
+            <svg viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Send Payment Screenshot on WhatsApp
+          </a>
+
+          <!-- Confirmation note -->
+          <div class="confirm-note">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p><strong>Rit Motor Sales &amp; Services</strong> will confirm your order within <strong>30 minutes</strong> of receiving your payment screenshot.</p>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="trust-row">
+            <span class="trust-pill">🔒 Secure</span>
+            <span class="trust-pill">✅ Verified Dealer</span>
+            <span class="trust-pill">5yr Warranty</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919163968140?text=Hi%2C%20I%27m%20on%20the%20checkout%20page%20and%20need%20help" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // ─── CONFIG — update these with real values ───
+    const UPI_ID      = 'ritmotorsales@upi';   // ← Replace with your UPI ID
+    const BUSINESS    = 'Rit Motor Sales';
+    const WA_NUMBER   = '919163968140';
+
+    // ─── Navbar scroll ───
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── Read URL params (from products page) ───
+    const params   = new URLSearchParams(window.location.search);
+    const pName    = params.get('product') || 'Saarthi Plus Passenger Rickshaw';
+    const pCat     = params.get('category') || 'E-Rickshaw · Passenger';
+    const pEmoji   = params.get('emoji')    || '🛺';
+    const pPriceRaw = params.get('price')   || '110000';
+    const baseAmt  = parseInt(pPriceRaw, 10) || 110000;
+
+    // Update order summary from params
+    document.getElementById('productName').textContent  = pName;
+    document.getElementById('productCat').textContent   = pCat;
+    document.getElementById('productEmoji').textContent = pEmoji;
+
+    // ─── Price calculation ───
+    const GST_RATE = 0.12;
+    let qty = 1;
+
+    function fmt(n) {
+      return '₹' + n.toLocaleString('en-IN');
+    }
+
+    function updatePrices() {
+      const base  = baseAmt * qty;
+      const gst   = Math.round(base * GST_RATE);
+      const total = base + gst;
+
+      document.getElementById('displayBase').textContent  = fmt(base);
+      document.getElementById('displayGst').textContent   = fmt(gst);
+      document.getElementById('displayTotal').textContent = fmt(total);
+      document.getElementById('productBasePrice').textContent =
+        qty > 1 ? fmt(baseAmt) + ' × ' + qty : fmt(baseAmt);
+
+      // Update UPI deep link
+      document.getElementById('upiDeepLink').href =
+        `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(BUSINESS)}&am=${total}&cu=INR&tn=${encodeURIComponent('Payment for ' + pName)}`;
+
+      // Update WhatsApp screenshot message
+      const waText = `Hi! I have completed the UPI payment for *${pName}* (Qty: ${qty}) — Total: ${fmt(total)}. Please find the payment screenshot attached. Kindly confirm my order. Thank you!`;
+      document.getElementById('waScreenshotBtn').href =
+        `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`;
+    }
+
+    // Qty buttons
+    document.getElementById('qtyPlus').addEventListener('click', () => {
+      if (qty < 5) { qty++; document.getElementById('qtyVal').textContent = qty; updatePrices(); }
+    });
+    document.getElementById('qtyMinus').addEventListener('click', () => {
+      if (qty > 1) { qty--; document.getElementById('qtyVal').textContent = qty; updatePrices(); }
+    });
+
+    // Initial price render
+    updatePrices();
+
+    // ─── Copy UPI ID ───
+    function copyUPI() {
+      navigator.clipboard.writeText(UPI_ID).then(() => {
+        const btn = document.getElementById('copyUpiBtn');
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><polyline points="20 6 9 17 4 12"/></svg> Copied!`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy`;
+        }, 2000);
+      });
+    }
+
+    // ─── Trigger card animations ───
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.glass-card.fade-in').forEach(el => {
+        el.style.animationPlayState = 'running';
+      });
+    });
+  </script>
+  <script src="shared.js"></script>
+</body>
+</html>

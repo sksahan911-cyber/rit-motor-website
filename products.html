@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Vehicles & Spare Parts | Rit Motor Sales & Services, Howrah</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <!-- SEO -->
+  <meta name="description" content="Browse e-rickshaws, e-scooters and genuine spare parts at Rit Motor Sales & Services, Howrah. Transparent pricing, easy EMI. Chat on WhatsApp for a quote.">
+  <meta name="keywords" content="buy e-rickshaw Uluberia, e-scooter price West Bengal, electric vehicle spare parts, e-toto loader Howrah">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rit Motor Sales & Services">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rit Motor Sales & Services">
+  <meta property="og:title" content="Electric Vehicles & Spare Parts | Rit Motor Sales & Services">
+  <meta property="og:description" content="Browse e-rickshaws, e-scooters and genuine spare parts. Transparent pricing, easy EMI. Chat on WhatsApp.">
+  <meta property="og:url" content="https://ritmotorsales.in/products.html">
+  <meta property="og:image" content="https://ritmotorsales.in/og-image.png">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Electric Vehicles & Spare Parts | Rit Motor">
+  <meta name="twitter:description" content="Browse e-rickshaws, e-scooters and genuine spare parts at Rit Motor Sales & Services.">
+  <meta name="theme-color" content="#22C55E">
+  <link rel="canonical" href="https://ritmotorsales.in/products.html">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FFFFFF;
+      --blue:         #3B82F6;
+      --blue-dark:    #2563EB;
+      --mint:         #22C55E;
+      --mint-dark:    #16A34A;
+      --text:         #111827;
+      --text-muted:   #6B7280;
+      --glass-bg:     rgba(255,255,255,0.7);
+      --glass-border: rgba(0,0,0,0.06);
+      --shadow:       0 4px 20px rgba(0,0,0,0.06);
+      --shadow-blue:  0 8px 32px rgba(37,99,235,0.12);
+      --blur:         blur(20px);
+      --radius:       24px;
+      --spring:       cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ─── Background blobs ─── */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+      opacity: 0.06;
+    }
+    body::before {
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    body::after {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, #22C55E 0%, transparent 70%);
+      bottom: 5%; left: -120px;
+    }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 1200px;
+      z-index: 1000;
+      background: rgba(245,247,250,0.6);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(245,247,250,0.88);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      padding: 10px 20px;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo .logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo .logo-icon svg { width: 18px; height: 18px; }
+    .nav-logo span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 7px 14px;
+      border-radius: 100px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text);
+      background: rgba(59,130,246,0.08);
+    }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 100px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+    }
+    .nav-cta:hover { transform: scale(1.03); box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+    .nav-cta svg { width: 16px; height: 16px; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 4px; transition: 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 80px; left: 16px; right: 16px;
+      background: rgba(245,247,250,0.92);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      z-index: 999;
+      box-shadow: var(--shadow);
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--text);
+      font-weight: 500; padding: 10px 14px;
+      border-radius: 14px; transition: background 0.2s;
+    }
+    .mobile-menu a:hover { background: rgba(59,130,246,0.08); }
+    .mobile-menu .nav-cta { justify-content: center; margin-top: 4px; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      position: relative;
+      z-index: 1;
+      padding: 130px 24px 56px;
+      text-align: center;
+    }
+
+    .page-header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: floatUp 0.8s var(--spring) 0.1s forwards;
+    }
+    .page-header-tag::before {
+      content: '';
+      width: 20px; height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+    .page-header-tag::after {
+      content: '';
+      width: 20px; height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: floatUp 0.9s var(--spring) 0.25s forwards;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-header p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+      opacity: 0;
+      animation: floatUp 0.9s var(--spring) 0.4s forwards;
+    }
+
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── FILTER TABS ─── */
+    .filter-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 56px;
+      opacity: 0;
+      animation: floatUp 0.9s var(--spring) 0.55s forwards;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 6px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 100px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      background: transparent;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .filter-btn:hover:not(.active) {
+      background: rgba(59,130,246,0.07);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+    }
+    .filter-btn .tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.25);
+    }
+    .filter-btn:not(.active) .tab-count {
+      background: rgba(59,130,246,0.1);
+      color: var(--blue);
+    }
+
+    /* ─── PRODUCTS GRID ─── */
+    .products-section {
+      position: relative;
+      z-index: 1;
+      padding: 0 24px 96px;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* ─── PRODUCT CARD ─── */
+    .product-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+      /* filter animation state */
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      position: relative;
+    }
+    .product-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 28px;
+      background: rgba(255,255,255,0);
+      transition: background 0.25s ease-out;
+      pointer-events: none;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(37,99,235,0.12), 0 4px 12px rgba(0,0,0,0.06);
+      border-color: rgba(59,130,246,0.2);
+    }
+    .product-card:hover::after {
+      background: rgba(255,255,255,0.05);
+    }
+    .product-card.hidden {
+      display: none;
+    }
+    /* animate-in class added by JS */
+    .product-card.animate-in {
+      animation: cardIn 0.45s var(--spring) both;
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: scale(0.94) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Card image area */
+    .card-thumb {
+      height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-thumb.bg-blue   { background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(37,99,235,0.16)); }
+    .card-thumb.bg-green  { background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(22,163,74,0.16)); }
+    .card-thumb.bg-purple { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(59,130,246,0.14)); }
+    .card-thumb.bg-amber  { background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(245,158,11,0.18)); }
+    .card-thumb.bg-rose   { background: linear-gradient(135deg, rgba(251,113,133,0.1), rgba(244,63,94,0.15)); }
+
+    .card-emoji {
+      font-size: 5.5rem;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1));
+      animation: floatAnim 4s ease-in-out infinite;
+      line-height: 1;
+    }
+    @keyframes floatAnim {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+    .product-card:nth-child(2) .card-emoji { animation-delay: 0.8s; }
+    .product-card:nth-child(3) .card-emoji { animation-delay: 1.6s; }
+    .product-card:nth-child(4) .card-emoji { animation-delay: 2.4s; }
+    .product-card:nth-child(5) .card-emoji { animation-delay: 3.2s; }
+    .product-card:nth-child(6) .card-emoji { animation-delay: 4.0s; }
+
+    .card-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--glass-border);
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .card-badge.new    { color: var(--blue); }
+    .card-badge.hot    { color: #F43F5E; }
+    .card-badge.sale   { color: var(--mint-dark); }
+    .card-badge.stock  { color: #F59E0B; }
+
+    /* Card body */
+    .card-body {
+      padding: 22px 22px 20px;
+    }
+
+    .card-category {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 7px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .card-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+    .spec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(59,130,246,0.07);
+      color: var(--blue-dark);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(59,130,246,0.14);
+    }
+    .spec-tag.green {
+      background: rgba(34,197,94,0.07);
+      color: var(--mint-dark);
+      border-color: rgba(34,197,94,0.18);
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .card-price-wrap { flex: 1; min-width: 0; }
+    .card-price-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .card-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .card-price.contact {
+      font-size: 0.95rem;
+      background: none;
+      -webkit-text-fill-color: var(--text-muted);
+      color: var(--text-muted);
+    }
+
+    .enquire-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+      flex-shrink: 0;
+    }
+    .enquire-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(34,197,94,0.45);
+    }
+    .enquire-btn svg { width: 14px; height: 14px; fill: #fff; flex-shrink: 0; }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+    .empty-state.show { display: flex; }
+    .empty-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.5; }
+    .empty-state p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      position: relative;
+      z-index: 1;
+      padding: 0 24px 96px;
+    }
+    .cta-strip-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(34,197,94,0.05));
+      border: 1px solid rgba(59,130,246,0.12);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border-radius: 28px;
+      padding: 48px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .cta-strip-text h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .cta-strip-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 420px;
+    }
+    .cta-strip-btns {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 24px rgba(34,197,94,0.35);
+      white-space: nowrap;
+    }
+    .btn-primary:hover { transform: scale(1.03); box-shadow: 0 10px 32px rgba(34,197,94,0.5); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--glass-bg);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+    .btn-outline:hover { transform: scale(1.03); box-shadow: 0 10px 32px rgba(0,0,0,0.1); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      position: relative; z-index: 1;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border-top: 1px solid var(--glass-border);
+      padding: 52px 24px 32px;
+    }
+    .footer-inner { max-width: 1160px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.875rem; color: var(--text-muted);
+      line-height: 1.7; margin-top: 14px; max-width: 240px;
+    }
+    .footer-heading { font-weight: 700; font-size: 0.875rem; margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      text-decoration: none; font-size: 0.85rem;
+      color: var(--text-muted); transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-social { display: flex; gap: 10px; margin-top: 18px; }
+    .social-btn {
+      width: 38px; height: 38px; border-radius: 12px;
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .social-btn:hover { transform: scale(1.08); background: rgba(59,130,246,0.08); }
+    .social-btn svg { width: 16px; height: 16px; fill: var(--text-muted); }
+    .footer-bottom {
+      border-top: 1px solid var(--glass-border);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+    .footer-bottom a { color: var(--blue); text-decoration: none; }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #22C55E;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(34,197,94,0.4);
+      text-decoration: none;
+      animation: waBounceIn 0.9s var(--spring) 1s both, waPulse 2s ease-in-out 2.2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 14px 40px rgba(34,197,94,0.6) !important;
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    @keyframes waBounceIn {
+      0%   { opacity: 0; transform: scale(0.3) translateY(30px); }
+      60%  { opacity: 1; transform: scale(1.12); }
+      80%  { transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes waPulse {
+      0%, 100% { transform: scale(1);    box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
+      50%       { transform: scale(1.08); box-shadow: 0 12px 36px rgba(34,197,94,0.55); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .products-grid { grid-template-columns: 1fr; }
+      .cta-strip-inner { flex-direction: column; text-align: center; }
+      .cta-strip-btns { justify-content: center; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .filter-bar { gap: 6px; padding: 5px; }
+      .filter-btn { padding: 8px 14px; font-size: 0.82rem; }
+    }
+    @media (max-width: 640px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+    /* ─── SKELETON LOADING ─── */
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .skeleton-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      transition: opacity 0.4s ease;
+    }
+    .skeleton-grid.fade-out { opacity: 0; pointer-events: none; }
+    .skeleton-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .skeleton-thumb {
+      height: 210px;
+      background: #F3F4F6;
+    }
+    .skeleton-body { padding: 22px 22px 20px; }
+    .skeleton-line, .skeleton-tag, .skeleton-price, .skeleton-btn {
+      background: linear-gradient(90deg, #F3F4F6 25%, #EAECEF 50%, #F3F4F6 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      border-radius: 6px;
+    }
+    .skeleton-sm  { height: 10px; width: 40%; margin-bottom: 10px; }
+    .skeleton-lg  { height: 16px; width: 72%; margin-bottom: 10px; border-radius: 8px; }
+    .skeleton-md  { height: 10px; width: 58%; margin-bottom: 18px; }
+    .skeleton-specs { display: flex; gap: 7px; margin-bottom: 20px; }
+    .skeleton-tag   { height: 24px; width: 76px; border-radius: 100px; }
+    .skeleton-footer {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #E5E7EB;
+      gap: 10px;
+    }
+    .skeleton-price { height: 22px; width: 88px; }
+    .skeleton-btn   { height: 38px; width: 78px; border-radius: 100px; }
+
+    /* Grid starts invisible during skeleton phase */
+    #productsGrid.skeleton-loading {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #productsGrid.skeleton-done {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <span>Rit Motor</span>&nbsp;Sales &amp; Services
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#features">Why Us</a></li>
+      <li><a href="products.html" class="active">Vehicles</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="index.html#cta">Contact</a></li>
+    </ul>
+
+    <a href="https://wa.me/919163968140?text=Hi%2C%20I%27m%20interested%20in%20your%20electric%20vehicles" class="nav-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp Us
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#features">Why Choose Us</a>
+    <a href="products.html">Our Vehicles</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="index.html#cta">Contact</a>
+    <a href="https://wa.me/919163968140" class="nav-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp Us
+    </a>
+  </div>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <div class="page-header-tag">Our Catalogue</div>
+    <h1>All <span class="gradient-text">Products</span></h1>
+    <p>Browse our complete range of electric rickshaws, scooters &amp; genuine spare parts.</p>
+  </div>
+
+  <!-- ─── FILTER TABS ─── -->
+  <div class="filter-wrapper">
+    <div class="filter-bar" role="tablist">
+      <button class="filter-btn active" data-filter="all" role="tab">
+        All <span class="tab-count" id="count-all">9</span>
+      </button>
+      <button class="filter-btn" data-filter="e-rickshaw" role="tab">
+        🛺 E-Rickshaw <span class="tab-count" id="count-e-rickshaw">3</span>
+      </button>
+      <button class="filter-btn" data-filter="e-scooter" role="tab">
+        🛵 E-Scooter <span class="tab-count" id="count-e-scooter">3</span>
+      </button>
+      <button class="filter-btn" data-filter="spare-parts" role="tab">
+        🔧 Spare Parts <span class="tab-count" id="count-spare-parts">3</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ─── PRODUCTS GRID ─── -->
+  <section class="products-section">
+    <div class="container">
+
+      <!-- Skeleton placeholder (shown while blur reveal clears) -->
+      <div class="skeleton-grid" id="skeletonGrid">
+        <!-- 6 skeleton cards -->
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+        <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line skeleton-sm"></div><div class="skeleton-line skeleton-lg"></div><div class="skeleton-line skeleton-md"></div><div class="skeleton-specs"><div class="skeleton-tag"></div><div class="skeleton-tag"></div><div class="skeleton-tag"></div></div><div class="skeleton-footer"><div class="skeleton-price"></div><div class="skeleton-btn"></div></div></div></div>
+      </div>
+
+      <div class="products-grid skeleton-loading" id="productsGrid">
+
+        <!-- ─ E-RICKSHAW 1 ─ -->
+        <div class="product-card" data-category="e-rickshaw">
+          <div class="card-thumb bg-green">
+            <span class="card-emoji">🛺</span>
+            <span class="card-badge hot">Bestseller</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Rickshaw · Passenger</div>
+            <h3 class="card-title">Saarthi Plus Passenger Rickshaw</h3>
+            <p class="card-desc">India's most reliable passenger e-rickshaw. Smooth ride, high load capacity, and built for all-day city routes.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 110 km range</span>
+              <span class="spec-tag">🔋 60V / 100Ah</span>
+              <span class="spec-tag green">👥 4+1 seater</span>
+              <span class="spec-tag">⏱ 8 hr charge</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹1.10 Lakh</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20Saarthi%20Plus%20Passenger%20Rickshaw" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ E-RICKSHAW 2 ─ -->
+        <div class="product-card" data-category="e-rickshaw">
+          <div class="card-thumb bg-purple">
+            <span class="card-emoji">🚛</span>
+            <span class="card-badge stock">Heavy Duty</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Rickshaw · Loader</div>
+            <h3 class="card-title">Cargo King Loader Rickshaw</h3>
+            <p class="card-desc">High-torque motor designed for cargo, market deliveries, and last-mile goods transport.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 90 km range</span>
+              <span class="spec-tag">🏋 400 kg load</span>
+              <span class="spec-tag green">⚙ 1200W motor</span>
+              <span class="spec-tag">⏱ 7 hr charge</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹1.35 Lakh</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20Cargo%20King%20Loader%20Rickshaw" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ E-RICKSHAW 3 ─ -->
+        <div class="product-card" data-category="e-rickshaw">
+          <div class="card-thumb bg-blue">
+            <span class="card-emoji">🛺</span>
+            <span class="card-badge sale">Budget Pick</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Rickshaw · Passenger</div>
+            <h3 class="card-title">City Rider Standard</h3>
+            <p class="card-desc">Our most affordable passenger rickshaw. Perfect entry point for first-time EV buyers with great fuel savings.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 80 km range</span>
+              <span class="spec-tag">🔋 48V / 100Ah</span>
+              <span class="spec-tag green">👥 3+1 seater</span>
+              <span class="spec-tag">⏱ 6 hr charge</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹88,000</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20City%20Rider%20Standard" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ E-SCOOTER 1 ─ -->
+        <div class="product-card" data-category="e-scooter">
+          <div class="card-thumb bg-blue">
+            <span class="card-emoji">🛵</span>
+            <span class="card-badge new">New 2025</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Scooter · Premium</div>
+            <h3 class="card-title">Volt X1 Pro Scooter</h3>
+            <p class="card-desc">Smart commuter with digital dashboard, connected app, and sport-tuned suspension for Indian road conditions.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 85 km range</span>
+              <span class="spec-tag">🏎 60 km/h top</span>
+              <span class="spec-tag green">⏱ 4 hr charge</span>
+              <span class="spec-tag">📱 App connect</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹72,000</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20Volt%20X1%20Pro%20Scooter" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ E-SCOOTER 2 ─ -->
+        <div class="product-card" data-category="e-scooter">
+          <div class="card-thumb bg-amber">
+            <span class="card-emoji">🛵</span>
+            <span class="card-badge sale">Best Value</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Scooter · Standard</div>
+            <h3 class="card-title">Swift Mini Scooter</h3>
+            <p class="card-desc">Lightweight and zippy — perfect for students, short commutes, and anyone looking to beat city traffic effortlessly.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 60 km range</span>
+              <span class="spec-tag">🏎 45 km/h top</span>
+              <span class="spec-tag green">⏱ 3.5 hr charge</span>
+              <span class="spec-tag">⚖ 75 kg weight</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹52,000</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20Swift%20Mini%20Scooter" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ E-SCOOTER 3 ─ -->
+        <div class="product-card" data-category="e-scooter">
+          <div class="card-thumb bg-rose">
+            <span class="card-emoji">⚡</span>
+            <span class="card-badge hot">Top Speed</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">E-Scooter · Performance</div>
+            <h3 class="card-title">Speed Pro Performance</h3>
+            <p class="card-desc">Sporty look, powerful motor, long range. For riders who want performance without compromising on eco-friendliness.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 100 km range</span>
+              <span class="spec-tag">🏎 75 km/h top</span>
+              <span class="spec-tag green">🔋 72V Lithium</span>
+              <span class="spec-tag">⏱ 4.5 hr charge</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Starting from</div>
+                <div class="card-price">₹92,000</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20Speed%20Pro%20Performance%20Scooter" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ SPARE PART 1 ─ -->
+        <div class="product-card" data-category="spare-parts">
+          <div class="card-thumb bg-amber">
+            <span class="card-emoji">🔋</span>
+            <span class="card-badge new">Genuine</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">Spare Parts · Battery</div>
+            <h3 class="card-title">Lithium-Ion Battery Pack 60V</h3>
+            <p class="card-desc">OEM-grade lithium battery pack for e-rickshaws. 1500+ charge cycles, BMS protected, 2-year warranty.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 60V / 100Ah</span>
+              <span class="spec-tag green">✅ BMS protected</span>
+              <span class="spec-tag">🔄 1500+ cycles</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Price on enquiry</div>
+                <div class="card-price contact">Contact for price</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%2060V%20Lithium%20Battery%20Pack" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ SPARE PART 2 ─ -->
+        <div class="product-card" data-category="spare-parts">
+          <div class="card-thumb bg-purple">
+            <span class="card-emoji">⚙️</span>
+            <span class="card-badge new">OEM</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">Spare Parts · Motor</div>
+            <h3 class="card-title">BLDC Hub Motor 1000W</h3>
+            <p class="card-desc">Brushless DC hub motor for e-rickshaws and heavy e-scooters. High torque, low maintenance, long-lasting.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 1000W / 1200W</span>
+              <span class="spec-tag green">🛡 IP65 rated</span>
+              <span class="spec-tag">🔧 Easy fit</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Price on enquiry</div>
+                <div class="card-price contact">Contact for price</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%20BLDC%20Hub%20Motor%201000W" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ SPARE PART 3 ─ -->
+        <div class="product-card" data-category="spare-parts">
+          <div class="card-thumb bg-green">
+            <span class="card-emoji">🔌</span>
+            <span class="card-badge sale">In Stock</span>
+          </div>
+          <div class="card-body">
+            <div class="card-category">Spare Parts · Charger</div>
+            <h3 class="card-title">Smart Charger 60V / 72V</h3>
+            <p class="card-desc">Universal smart charger compatible with most e-rickshaw and e-scooter battery packs. Auto cut-off protection.</p>
+            <div class="card-specs">
+              <span class="spec-tag">⚡ 60V &amp; 72V</span>
+              <span class="spec-tag green">🛡 Auto cut-off</span>
+              <span class="spec-tag">🌡 Temp protected</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-wrap">
+                <div class="card-price-label">Price on enquiry</div>
+                <div class="card-price contact">Contact for price</div>
+              </div>
+              <a href="https://wa.me/919163968140?text=I'm%20interested%20in%20the%2060V%2F72V%20Smart%20Charger" class="enquire-btn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+    </div>
+  </section>
+
+  <!-- ─── CTA STRIP ─── -->
+  <div class="cta-strip">
+    <div class="cta-strip-inner">
+      <div class="cta-strip-text">
+        <h2>Can't find what you need? <span class="gradient-text">Ask us.</span></h2>
+        <p>We stock a wide range of EV models and parts. If it's not listed here, message us on WhatsApp — we'll source it for you.</p>
+      </div>
+      <div class="cta-strip-btns">
+        <a href="https://wa.me/919163968140?text=Hi%2C%20I'm%20looking%20for%20a%20product%20not%20listed%20on%20your%20website" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <a href="tel:+919163968140" class="btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:0">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <span>Rit Motor</span>&nbsp;Sales &amp; Services
+          </a>
+          <p>Empowering India's roads with clean, affordable electric mobility. Trusted by 150+ customers across Uluberia, Moubesia, Dhulasimla &amp; 58 Gate.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--bg)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--bg)" stroke-width="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20.06 12 20.06 12 20.06s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--bg)"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-heading">Company</p>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-heading">Products</p>
+          <ul class="footer-links">
+            <li><a href="products.html">E-Rickshaw</a></li>
+            <li><a href="products.html">E-Scooter</a></li>
+            <li><a href="products.html">Spare Parts</a></li>
+            <li><a href="#">Service &amp; AMC</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="#">Service Centers</a></li>
+            <li><a href="#">EMI Calculator</a></li>
+            <li><a href="#">Warranty Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Rit Motor Sales &amp; Services. All rights reserved.</p>
+        <p>Made with ❤️ in India &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919163968140?text=Hi%2C%20I%27m%20interested%20in%20your%20electric%20vehicles" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // ─── Navbar scroll ───
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── Mobile menu ───
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && !mobileMenu.contains(e.target))
+        mobileMenu.classList.remove('open');
+    });
+
+    // ─── Filter logic ───
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('.product-card');
+
+    // Count per category
+    const counts = { all: 0 };
+    cards.forEach(card => {
+      const cat = card.dataset.category;
+      counts[cat] = (counts[cat] || 0) + 1;
+      counts.all++;
+    });
+    Object.keys(counts).forEach(key => {
+      const el = document.getElementById('count-' + key);
+      if (el) el.textContent = counts[key];
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active tab
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Animate cards
+        cards.forEach((card, i) => {
+          const matches = filter === 'all' || card.dataset.category === filter;
+          if (matches) {
+            card.classList.remove('hidden');
+            // stagger delay
+            card.style.animationDelay = (i * 0.06) + 's';
+            card.classList.remove('animate-in');
+            // force reflow for re-triggering animation
+            void card.offsetWidth;
+            card.classList.add('animate-in');
+          } else {
+            card.classList.add('hidden');
+            card.classList.remove('animate-in');
+          }
+        });
+      });
+    });
+
+    // ─── Skeleton reveal timing ───
+    // Skeleton shows during blur-reveal (~750ms), then cards slide in
+    const skeletonGrid = document.getElementById('skeletonGrid');
+    const productsGrid = document.getElementById('productsGrid');
+
+    function revealCards() {
+      // Fade skeleton out
+      skeletonGrid.classList.add('fade-out');
+      // Show real grid (transition handles the fade)
+      productsGrid.style.transform = 'translateY(10px)';
+      productsGrid.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      productsGrid.classList.remove('skeleton-loading');
+      productsGrid.classList.add('skeleton-done');
+      // Small delay so translateY starts before opacity
+      requestAnimationFrame(() => {
+        productsGrid.style.transform = 'translateY(0)';
+      });
+      // Animate cards in with stagger
+      cards.forEach((card, i) => {
+        card.style.animationDelay = (i * 0.06) + 's';
+        card.classList.add('animate-in');
+      });
+      // Clean up skeleton after fade
+      setTimeout(() => skeletonGrid.remove(), 450);
+    }
+
+    // Wait for blur-reveal to clear (≈800ms), then show cards
+    setTimeout(revealCards, 820);
+
+    // ─── Auto-fill enquire/checkout URLs ───
+    function parsePrice(str) {
+      const s = str.replace(/[₹,\s]/g, '');
+      if (s.toLowerCase().includes('lakh')) return Math.round(parseFloat(s) * 100000);
+      return parseInt(s, 10) || 0;
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      const name      = card.querySelector('.card-title')?.textContent.trim() || '';
+      const cat       = card.querySelector('.card-category')?.textContent.trim() || '';
+      const emoji     = card.querySelector('.card-emoji')?.textContent.trim() || '🛺';
+      const priceEl   = card.querySelector('.card-price');
+      const priceText = priceEl ? priceEl.textContent.trim() : '';
+      const btn       = card.querySelector('.enquire-btn');
+      if (!btn) return;
+
+      const isContact = priceText.toLowerCase().includes('contact') || priceText === '';
+
+      if (isContact) {
+        // Spare parts → WhatsApp
+        const text = `Hi! I am interested in ${name}. Please share more details and pricing about Rit Motor Sales & Services.`;
+        btn.href = `https://wa.me/919163968140?text=${encodeURIComponent(text)}`;
+      } else {
+        // Vehicles → Checkout page with URL params
+        const priceNum = parsePrice(priceText);
+        const params = new URLSearchParams({ product: name, category: cat, emoji, price: priceNum });
+        btn.href = `checkout.html?${params.toString()}`;
+        btn.textContent = 'Buy Now';
+        btn.insertAdjacentHTML('afterbegin', `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`);
+      }
+    });
+  </script>
+  <script src="shared.js"></script>
+</body>
+</html>
