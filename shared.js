@@ -186,10 +186,20 @@
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
-  // Observe everything with .reveal (including what pages already tagged)
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  // Use requestAnimationFrame so layout is complete before we check visibility
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  });
+
+  // Fallback: force all unrevealed elements visible after 600ms
+  // Ensures content is never permanently hidden if the observer fails to fire
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 600);
 
 
   // ─── 9. WHATSAPP CTA BANNER ──────────────────────────
