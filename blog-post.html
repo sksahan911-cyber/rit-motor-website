@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Top 5 Benefits of E-Rickshaw for Indian Roads | Rit Motor Blog</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <meta name="description" content="Expert EV tips and guides from Rit Motor Sales & Services, Howrah.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#34D399">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F5F7FA; --blue: #4A9EFF; --blue-dark: #2563EB;
+      --mint: #34D399; --mint-dark: #059669;
+      --text: #111827; --text-muted: #6B7280;
+      --glass-bg: rgba(255,255,255,0.72); --glass-border: rgba(0,0,0,0.06);
+      --shadow: 0 4px 20px rgba(0,0,0,0.06); --blur: blur(20px);
+      --radius: 24px; --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body::before { content:''; position:fixed; width:500px; height:500px; background:radial-gradient(circle,#4A9EFF 0%,transparent 70%); top:-100px; right:-100px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(80px); opacity:0.06; }
+
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s var(--spring); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* Navbar */
+    .navbar { position:fixed; top:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:1200px; z-index:1000; background:rgba(245,247,250,0.65); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:100px; padding:11px 18px; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow); transition:background 0.4s,box-shadow 0.4s,padding 0.3s; }
+    .navbar.scrolled { background:rgba(245,247,250,0.92); box-shadow:0 8px 40px rgba(0,0,0,0.1); }
+    .nav-logo { font-weight:800; font-size:1rem; color:var(--text); text-decoration:none; display:flex; align-items:center; gap:8px; }
+    .nav-logo .logo-icon { width:32px; height:32px; background:linear-gradient(135deg,var(--blue),var(--mint)); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+    .nav-logo .logo-icon svg { width:17px; height:17px; }
+    .nav-logo span { color:var(--blue); }
+    .nav-links { display:flex; gap:2px; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
+    .nav-links a { text-decoration:none; color:var(--text-muted); font-size:0.82rem; font-weight:500; padding:6px 12px; border-radius:100px; transition:color 0.2s,background 0.2s; white-space:nowrap; }
+    .nav-links a:hover { color:var(--text); background:rgba(74,158,255,0.08); }
+    .nav-cta { display:inline-flex; align-items:center; gap:7px; background:#25D366; color:#fff; text-decoration:none; font-size:0.82rem; font-weight:600; padding:8px 16px; border-radius:100px; transition:transform 0.3s; white-space:nowrap; box-shadow:0 4px 16px rgba(37,211,102,0.35); }
+    .nav-cta:hover { transform:scale(1.03); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; background:none; border:none; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:4px; transition:0.3s; }
+    .mobile-menu { display:none; position:fixed; top:80px; left:16px; right:16px; background:rgba(245,247,250,0.96); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; z-index:999; box-shadow:var(--shadow); flex-direction:column; gap:6px; opacity:0; transform:translateY(-10px); transition:opacity 0.3s,transform 0.3s var(--spring); }
+    .mobile-menu.open { display:flex; opacity:1; transform:translateY(0); }
+    .mobile-menu a { text-decoration:none; color:var(--text); font-weight:500; padding:10px 14px; border-radius:14px; transition:background 0.2s; }
+    .mobile-menu a:hover { background:rgba(74,158,255,0.08); }
+
+    /* Layout */
+    .post-wrap { max-width:800px; margin:0 auto; padding:110px 24px 80px; }
+
+    /* Breadcrumb */
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.8rem; color:var(--text-muted); margin-bottom:32px; flex-wrap:wrap; }
+    .breadcrumb a { color:var(--blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+
+    /* Article header */
+    .post-header { margin-bottom:36px; }
+    .post-cat { display:inline-flex; align-items:center; gap:6px; background:rgba(74,158,255,0.1); color:var(--blue); font-size:0.75rem; font-weight:700; padding:5px 14px; border-radius:100px; margin-bottom:16px; letter-spacing:0.5px; text-transform:uppercase; }
+    .post-title { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; letter-spacing:-0.8px; line-height:1.2; margin-bottom:16px; }
+    .post-meta { display:flex; align-items:center; gap:16px; font-size:0.82rem; color:var(--text-muted); flex-wrap:wrap; margin-bottom:28px; }
+    .post-meta span { display:flex; align-items:center; gap:5px; }
+
+    /* Hero image */
+    .post-hero-img {
+      height:340px; border-radius:24px; overflow:hidden; margin-bottom:40px;
+      background:linear-gradient(135deg,rgba(74,158,255,0.1),rgba(52,211,153,0.1));
+      display:flex; align-items:center; justify-content:center; font-size:7rem;
+      box-shadow:var(--shadow); border:1px solid var(--glass-border);
+    }
+
+    /* Article body */
+    .post-body { font-size:1rem; line-height:1.85; color:var(--text); }
+    .post-body h2 { font-size:1.5rem; font-weight:800; letter-spacing:-0.4px; margin:36px 0 14px; }
+    .post-body h3 { font-size:1.15rem; font-weight:700; margin:28px 0 10px; }
+    .post-body p { margin-bottom:18px; color:#374151; }
+    .post-body ul, .post-body ol { padding-left:20px; margin-bottom:18px; }
+    .post-body li { margin-bottom:8px; color:#374151; }
+    .post-body strong { font-weight:700; color:var(--text); }
+    .post-body blockquote {
+      background:rgba(74,158,255,0.06); border-left:4px solid var(--blue);
+      border-radius:0 16px 16px 0; padding:16px 20px; margin:24px 0;
+      font-style:italic; color:#374151; font-size:0.95rem;
+    }
+    .post-callout {
+      background:linear-gradient(135deg,rgba(52,211,153,0.08),rgba(74,158,255,0.06));
+      border:1px solid rgba(52,211,153,0.18); border-radius:20px;
+      padding:22px 24px; margin:28px 0; font-size:0.9rem; line-height:1.7;
+    }
+    .post-callout .callout-title { font-weight:800; font-size:0.95rem; margin-bottom:8px; color:var(--mint-dark); }
+
+    /* Share row */
+    .share-row { display:flex; align-items:center; gap:12px; margin-top:48px; padding-top:28px; border-top:1px solid var(--glass-border); flex-wrap:wrap; }
+    .share-label { font-size:0.85rem; font-weight:700; color:var(--text-muted); }
+    .share-btn { display:inline-flex; align-items:center; gap:7px; padding:8px 18px; border-radius:100px; font-size:0.8rem; font-weight:700; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; }
+    .share-wa { background:#25D366; color:#fff; box-shadow:0 3px 12px rgba(37,211,102,0.35); }
+    .share-wa:hover { transform:scale(1.05); }
+    .share-copy { background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text); }
+    .share-copy:hover { background:rgba(0,0,0,0.04); }
+
+    /* Related posts */
+    .related-section { margin-top:64px; }
+    .related-section h3 { font-size:1.4rem; font-weight:800; letter-spacing:-0.4px; margin-bottom:24px; }
+    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .related-card { background:var(--glass-bg); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:20px; overflow:hidden; text-decoration:none; color:inherit; transition:transform 0.4s var(--spring),box-shadow 0.4s; }
+    .related-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(74,158,255,0.12); }
+    .related-thumb { height:110px; display:flex; align-items:center; justify-content:center; font-size:3rem; background:linear-gradient(135deg,rgba(74,158,255,0.08),rgba(52,211,153,0.08)); }
+    .related-body { padding:16px; }
+    .related-body h4 { font-size:0.88rem; font-weight:700; line-height:1.4; margin-bottom:6px; }
+    .related-date { font-size:0.73rem; color:var(--text-muted); }
+
+    /* CTA card */
+    .post-cta-card {
+      background:linear-gradient(135deg,rgba(74,158,255,0.06),rgba(52,211,153,0.05));
+      border:1px solid rgba(74,158,255,0.12); border-radius:24px;
+      padding:36px; text-align:center; margin-top:48px; box-shadow:var(--shadow);
+    }
+    .post-cta-card h3 { font-size:1.3rem; font-weight:800; margin-bottom:10px; }
+    .post-cta-card p { font-size:0.88rem; color:var(--text-muted); margin-bottom:22px; line-height:1.7; }
+    .btn-wa-post { display:inline-flex; align-items:center; gap:8px; background:#25D366; color:#fff; text-decoration:none; font-weight:700; font-size:0.9rem; padding:13px 26px; border-radius:100px; box-shadow:0 5px 18px rgba(37,211,102,0.4); transition:transform 0.2s,box-shadow 0.2s; }
+    .btn-wa-post:hover { transform:scale(1.04); box-shadow:0 8px 28px rgba(37,211,102,0.52); }
+
+    @media (max-width:768px) {
+      .nav-links,.nav-cta { display:none; }
+      .hamburger { display:flex; }
+      .related-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:480px) {
+      .related-grid { grid-template-columns:1fr; }
+      .post-hero-img { height:200px; font-size:5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    Rit <span>Motor</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Vehicles</a></li>
+    <li><a href="spare-parts.html">Spare Parts</a></li>
+    <li><a href="index.html#finance">Finance</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/919163968140?text=Hi!%20I%20want%20to%20book%20a%20vehicle%20at%20Rit%20Motor." class="btn-book-now" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Now
+    </a>
+    <a class="nav-cta" href="https://wa.me/919163968140" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="products.html">Vehicles</a><a href="spare-parts.html">Spare Parts</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="https://wa.me/919163968140" class="nav-cta" target="_blank">📅 Book Now</a>
+</div>
+
+<div class="post-wrap">
+  <!-- Breadcrumb -->
+  <div class="breadcrumb reveal">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="blog.html">Blog</a><span>›</span>
+    <span id="bcTitle">Top 5 Benefits of E-Rickshaw for Indian Roads</span>
+  </div>
+
+  <!-- Article header -->
+  <div class="post-header reveal">
+    <div class="post-cat" id="postCat">🛺 Buying Guide</div>
+    <h1 class="post-title" id="postTitle">Top 5 Benefits of E-Rickshaw for Indian Roads</h1>
+    <div class="post-meta">
+      <span>📅 <span id="postDate">April 2026</span></span>
+      <span>⏱ 5 min read</span>
+      <span>✍️ Rit Motor Team</span>
+      <span>👁 1,247 views</span>
+    </div>
+  </div>
+
+  <!-- Hero image -->
+  <div class="post-hero-img reveal" id="postEmoji">🛺</div>
+
+  <!-- Article body -->
+  <div class="post-body reveal" id="postBody">
+    <p>Electric rickshaws — commonly called <strong>e-rickshaws</strong> or <strong>e-totos</strong> — have quietly revolutionised last-mile transportation across India, especially in West Bengal. With over <strong>1.5 million e-rickshaws</strong> now operating across the country, they're no longer just an alternative — they're the smart choice for drivers and passengers alike.</p>
+
+    <p>At Rit Motor Sales & Services, we've helped over 500 drivers make the switch to electric. Here are the <strong>top 5 benefits</strong> we see every day:</p>
+
+    <h2>1. Zero Fuel Cost = Maximum Daily Earnings 💰</h2>
+    <p>The biggest advantage of an e-rickshaw is simple: <strong>you pay nothing for fuel</strong>. A full charge costs approximately <strong>₹15–20 of electricity</strong> for 80–110 km of range. Compare that to a CNG or petrol auto which burns ₹300–400 per day in fuel.</p>
+    <p>Our drivers report <strong>net daily savings of ₹280–380</strong> compared to petrol vehicles — that's over ₹8,000–11,000 per month that goes directly into their pocket.</p>
+
+    <div class="post-callout">
+      <div class="callout-title">💡 Real Customer Example</div>
+      Ratan Das from Uluberia purchased a Saarthi Plus in January 2025. He earns ₹1,200/day on average and his electricity cost is under ₹20/day. After EMI of ₹3,400/month, he nets over ₹25,000 per month — double what he earned with his old petrol auto.
+    </div>
+
+    <h2>2. Lower Maintenance, Fewer Breakdowns 🔧</h2>
+    <p>E-rickshaws have <strong>far fewer moving parts</strong> than petrol or CNG vehicles. There's no engine oil, no gearbox, no complex combustion system. The main components are:</p>
+    <ul>
+      <li>BLDC Hub Motor (virtually zero wear)</li>
+      <li>Lithium-Ion or Lead-Acid Battery</li>
+      <li>Controller (ECU)</li>
+      <li>Basic brake and suspension</li>
+    </ul>
+    <p>Most of our customers service their vehicles <strong>just once every 3–4 months</strong>, costing ₹500–800 per visit. Petrol autos require weekly maintenance averaging ₹1,500–2,000 per month.</p>
+
+    <h2>3. Government Support and Subsidies 🏛️</h2>
+    <p>The Indian government actively promotes EV adoption through:</p>
+    <ul>
+      <li><strong>FAME II Scheme:</strong> Direct subsidy on purchase of e-rickshaws</li>
+      <li><strong>West Bengal EV Policy:</strong> Road tax exemption and registration fee waiver</li>
+      <li><strong>Bank Priority Lending:</strong> Easier loan access for EV buyers under RBI guidelines</li>
+      <li><strong>Green Number Plates:</strong> Preferred access lanes in some cities</li>
+    </ul>
+
+    <h2>4. Better Passenger Experience = More Repeat Customers 😊</h2>
+    <p>E-rickshaws are <strong>quieter, smoother, and cleaner</strong> than petrol options. Passengers prefer them because there's no exhaust smell, less vibration, and a more comfortable ride. This leads to better tips, more repeat customers, and higher daily trip counts.</p>
+
+    <blockquote>"My passengers actively look for my e-rickshaw because it's so much more comfortable. I make more per day and they're happier. It's a win-win." — Monika Ghosh, Rit Motor Customer, Moubesia</blockquote>
+
+    <h2>5. Eco-Friendly = Better India 🌱</h2>
+    <p>Each e-rickshaw replaces approximately <strong>2.5 tonnes of CO₂ emissions per year</strong> compared to a petrol auto. With lakhs of e-rickshaws on Indian roads, the collective environmental impact is enormous. You're not just running a business — you're building a cleaner future for your children.</p>
+
+    <p>West Bengal's urban areas have seen measurable improvements in air quality in areas where e-rickshaw adoption is high, particularly in Howrah and Kolkata.</p>
+
+    <h2>Ready to Make the Switch? 🚀</h2>
+    <p>At Rit Motor Sales & Services, we stock 3 e-rickshaw models starting from <strong>₹88,000</strong>. All come with a <strong>5-year frame warranty</strong>, easy EMI options, and doorstep service across Howrah district.</p>
+    <p>Chat with our team on WhatsApp — we'll help you choose the right model for your route, calculate your EMI, and book a free test ride at your location.</p>
+  </div>
+
+  <!-- Share -->
+  <div class="share-row reveal">
+    <span class="share-label">Share this article:</span>
+    <a class="share-btn share-wa" href="https://wa.me/?text=Read%20this%3A%20Top%205%20Benefits%20of%20E-Rickshaw%20for%20Indian%20Roads%20-%20Rit%20Motor%20Blog" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Share on WhatsApp
+    </a>
+    <button class="share-btn share-copy" onclick="navigator.clipboard?.writeText(location.href);this.textContent='✓ Copied!'">
+      🔗 Copy Link
+    </button>
+  </div>
+
+  <!-- CTA Card -->
+  <div class="post-cta-card reveal">
+    <h3>Interested in an E-Rickshaw? 🛺</h3>
+    <p>Chat with our experts on WhatsApp. We'll help you choose the right model, calculate EMI, and book a free test ride at your location — all in minutes.</p>
+    <a class="btn-wa-post" href="https://wa.me/919163968140?text=Hi!%20I%20read%20your%20blog%20about%20e-rickshaw%20benefits%20and%20I%20am%20interested%20in%20buying%20one." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat with Rit Motor
+    </a>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="related-section reveal">
+    <h3>You Might Also Like</h3>
+    <div class="related-grid">
+      <a class="related-card" href="blog-post.html?slug=maintain-escooter-battery">
+        <div class="related-thumb">🔋</div>
+        <div class="related-body"><h4>How to Maintain Your E-Scooter Battery</h4><div class="related-date">📅 March 2026</div></div>
+      </a>
+      <a class="related-card" href="blog-post.html?slug=ev-future-india">
+        <div class="related-thumb">🌱</div>
+        <div class="related-body"><h4>Why EVs Are the Future of India</h4><div class="related-date">📅 February 2026</div></div>
+      </a>
+      <a class="related-card" href="blog-post.html?slug=erickshaw-vs-petrol">
+        <div class="related-thumb">⚡</div>
+        <div class="related-body"><h4>E-Rickshaw vs Petrol Auto: Cost Comparison</h4><div class="related-date">📅 November 2025</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Rit <span>Motor</span></a>
+        <p>West Bengal's trusted EV dealer since 2019. Expert EV advice you can trust.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="social-btn" href="https://wa.me/919163968140" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><div class="footer-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Vehicles</a></li><li><a href="spare-parts.html">Spare Parts</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><div class="footer-heading">Products</div><ul class="footer-links"><li><a href="products.html">E-Rickshaws</a></li><li><a href="products.html">E-Scooters</a></li><li><a href="spare-parts.html">Spare Parts</a></li></ul></div>
+      <div class="footer-col"><div class="footer-heading">Contact Us</div><div class="footer-contact-item"><span class="fc-icon">📍</span><span>Uluberia, Howrah, WB</span></div><div class="footer-contact-item"><span class="fc-icon">📞</span><a href="tel:+919163968140">+91 91639 68140</a></div><div class="footer-contact-item"><span class="fc-icon">🕐</span><span>Mon–Sat 9AM–7PM</span></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Rit Motor Sales & Services. All rights reserved.</p><p>Made with ❤️ in West Bengal</p></div>
+  </div>
+  <a class="wa-fab" href="https://wa.me/919163968140" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+// Dynamic content based on slug
+const posts = {
+  'benefits-of-erickshaw': { title:'Top 5 Benefits of E-Rickshaw for Indian Roads', cat:'🛺 Buying Guide', date:'April 2026', emoji:'🛺' },
+  'maintain-escooter-battery': { title:'How to Maintain Your E-Scooter Battery for Longer Life', cat:'🔧 Maintenance', date:'March 2026', emoji:'🔋' },
+  'ev-future-india': { title:'Why Electric Vehicles Are the Future of India', cat:'📰 News', date:'February 2026', emoji:'🌱' },
+  'charge-ev-efficiently': { title:'How to Charge Your EV Efficiently: 7 Expert Tips', cat:'🔧 Maintenance', date:'January 2026', emoji:'🔌' },
+  'govt-subsidy-ev': { title:'West Bengal EV Subsidy 2026: Everything You Need to Know', cat:'📰 News', date:'December 2025', emoji:'🏛️' },
+  'erickshaw-vs-petrol': { title:'E-Rickshaw vs Petrol Auto: A Cost Comparison', cat:'🛺 Buying Guide', date:'November 2025', emoji:'⚡' },
+  'choose-ev-battery': { title:'Lead-Acid vs Lithium Battery: Which to Choose?', cat:'🛺 Buying Guide', date:'October 2025', emoji:'🔋' },
+};
+const slug = new URLSearchParams(location.search).get('slug') || 'benefits-of-erickshaw';
+const post = posts[slug] || posts['benefits-of-erickshaw'];
+document.getElementById('pageTitle').textContent = post.title + ' | Rit Motor Blog';
+document.getElementById('postTitle').textContent = post.title;
+document.getElementById('postCat').textContent = post.cat;
+document.getElementById('postDate').textContent = post.date;
+document.getElementById('postEmoji').textContent = post.emoji;
+document.getElementById('bcTitle').textContent = post.title;
+</script>
+</body>
+</html>

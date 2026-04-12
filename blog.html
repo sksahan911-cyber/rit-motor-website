@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | EV Tips, Guides & News – Rit Motor Sales & Services</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <meta name="description" content="Expert EV tips, maintenance guides, buying advice and India electric vehicle news from Rit Motor Sales & Services, Howrah.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#34D399">
+  <link rel="canonical" href="https://ritmotorsales.in/blog.html">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F5F7FA; --blue: #4A9EFF; --blue-dark: #2563EB;
+      --mint: #34D399; --mint-dark: #059669;
+      --text: #111827; --text-muted: #6B7280;
+      --glass-bg: rgba(255,255,255,0.72); --glass-border: rgba(0,0,0,0.06);
+      --shadow: 0 4px 20px rgba(0,0,0,0.06); --blur: blur(20px);
+      --radius: 24px; --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body::before { content:''; position:fixed; width:500px; height:500px; background:radial-gradient(circle,#4A9EFF 0%,transparent 70%); top:-100px; right:-100px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(80px); opacity:0.06; }
+
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s var(--spring); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-delay-1 { transition-delay:0.1s; }
+    .reveal-delay-2 { transition-delay:0.2s; }
+    .reveal-delay-3 { transition-delay:0.3s; }
+    .reveal-delay-4 { transition-delay:0.4s; }
+    .reveal-delay-5 { transition-delay:0.5s; }
+
+    /* Navbar */
+    .navbar { position:fixed; top:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:1200px; z-index:1000; background:rgba(245,247,250,0.65); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:100px; padding:11px 18px; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow); transition:background 0.4s,box-shadow 0.4s,padding 0.3s; }
+    .navbar.scrolled { background:rgba(245,247,250,0.92); box-shadow:0 8px 40px rgba(0,0,0,0.1); }
+    .nav-logo { font-weight:800; font-size:1rem; color:var(--text); text-decoration:none; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+    .nav-logo .logo-icon { width:32px; height:32px; background:linear-gradient(135deg,var(--blue),var(--mint)); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+    .nav-logo .logo-icon svg { width:17px; height:17px; }
+    .nav-logo span { color:var(--blue); }
+    .nav-links { display:flex; gap:2px; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
+    .nav-links a { text-decoration:none; color:var(--text-muted); font-size:0.82rem; font-weight:500; padding:6px 12px; border-radius:100px; transition:color 0.2s,background 0.2s; white-space:nowrap; }
+    .nav-links a:hover { color:var(--text); background:rgba(74,158,255,0.08); }
+    .nav-cta { display:inline-flex; align-items:center; gap:7px; background:#25D366; color:#fff; text-decoration:none; font-size:0.82rem; font-weight:600; padding:8px 16px; border-radius:100px; transition:transform 0.3s,box-shadow 0.3s; white-space:nowrap; box-shadow:0 4px 16px rgba(37,211,102,0.35); }
+    .nav-cta:hover { transform:scale(1.03); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; background:none; border:none; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:4px; transition:0.3s; }
+    .mobile-menu { display:none; position:fixed; top:80px; left:16px; right:16px; background:rgba(245,247,250,0.96); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; z-index:999; box-shadow:var(--shadow); flex-direction:column; gap:6px; opacity:0; transform:translateY(-10px); transition:opacity 0.3s,transform 0.3s var(--spring); }
+    .mobile-menu.open { display:flex; opacity:1; transform:translateY(0); }
+    .mobile-menu a { text-decoration:none; color:var(--text); font-weight:500; padding:10px 14px; border-radius:14px; transition:background 0.2s; }
+    .mobile-menu a:hover { background:rgba(74,158,255,0.08); }
+    .mobile-menu .nav-cta { justify-content:center; margin-top:6px; }
+
+    /* Hero */
+    .blog-hero { padding:130px 24px 60px; text-align:center; position:relative; z-index:1; }
+    .blog-hero .hero-badge { display:inline-flex; align-items:center; gap:8px; background:var(--glass-bg); border:1px solid var(--glass-border); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); padding:8px 18px; border-radius:100px; font-size:0.8rem; font-weight:600; color:var(--blue); margin-bottom:24px; box-shadow:var(--shadow); }
+    .blog-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem); font-weight:800; letter-spacing:-1.2px; margin-bottom:16px; }
+    .gradient-text { background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--mint)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .blog-hero p { font-size:1rem; color:var(--text-muted); max-width:500px; margin:0 auto; line-height:1.7; }
+
+    /* Filter */
+    .filter-bar { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:40px 0; }
+    .filter-btn { padding:8px 20px; border-radius:100px; border:1.5px solid var(--glass-border); background:var(--glass-bg); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); font-size:0.82rem; font-weight:600; color:var(--text-muted); cursor:pointer; font-family:inherit; transition:all 0.25s; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+    .filter-btn:hover { border-color:rgba(74,158,255,0.3); color:var(--blue); }
+    .filter-btn.active { background:linear-gradient(135deg,var(--blue),var(--blue-dark)); border-color:transparent; color:#fff; box-shadow:0 4px 16px rgba(74,158,255,0.35); }
+
+    /* Blog grid */
+    .blog-section { position:relative; z-index:1; padding:0 24px 96px; }
+    .container { max-width:1160px; margin:0 auto; }
+
+    /* Featured post */
+    .featured-post {
+      display:grid; grid-template-columns:1fr 1fr; gap:0;
+      background:var(--glass-bg); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur);
+      border:1px solid var(--glass-border); border-radius:28px; overflow:hidden;
+      box-shadow:var(--shadow); margin-bottom:32px; text-decoration:none; color:inherit;
+      transition:transform 0.4s var(--spring), box-shadow 0.4s ease;
+    }
+    .featured-post:hover { transform:translateY(-6px); box-shadow:0 24px 52px rgba(74,158,255,0.14); }
+    .feat-thumb { background:linear-gradient(135deg,rgba(74,158,255,0.1),rgba(52,211,153,0.1)); display:flex; align-items:center; justify-content:center; font-size:6rem; min-height:280px; }
+    .feat-body { padding:36px; display:flex; flex-direction:column; justify-content:center; }
+    .feat-tag { display:inline-flex; align-items:center; background:rgba(74,158,255,0.1); color:var(--blue); font-size:0.72rem; font-weight:700; padding:4px 12px; border-radius:100px; margin-bottom:12px; letter-spacing:0.5px; text-transform:uppercase; }
+    .feat-title { font-size:1.6rem; font-weight:800; letter-spacing:-0.5px; line-height:1.3; margin-bottom:14px; }
+    .feat-excerpt { font-size:0.88rem; color:var(--text-muted); line-height:1.75; margin-bottom:20px; }
+    .feat-meta { font-size:0.78rem; color:var(--text-muted); display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    .feat-read-more { display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg,var(--blue),var(--blue-dark)); color:#fff; font-size:0.82rem; font-weight:700; padding:10px 22px; border-radius:100px; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 14px rgba(74,158,255,0.35); align-self:flex-start; }
+    .feat-read-more:hover { transform:scale(1.04); box-shadow:0 8px 24px rgba(74,158,255,0.5); }
+
+    /* Blog grid */
+    .posts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .blog-card { background:var(--glass-bg); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:block; transition:transform 0.45s var(--spring),box-shadow 0.45s ease; }
+    .blog-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:0 24px 52px rgba(74,158,255,0.14); }
+    .blog-thumb { height:160px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; background:linear-gradient(135deg,rgba(74,158,255,0.08),rgba(52,211,153,0.08)); border-bottom:1px solid var(--glass-border); }
+    .blog-body { padding:22px; }
+    .blog-cat { display:inline-flex; align-items:center; gap:5px; background:rgba(74,158,255,0.08); color:var(--blue); font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:100px; margin-bottom:10px; letter-spacing:0.3px; text-transform:uppercase; }
+    .blog-title { font-size:0.98rem; font-weight:700; line-height:1.45; margin-bottom:10px; letter-spacing:-0.2px; }
+    .blog-excerpt { font-size:0.82rem; color:var(--text-muted); line-height:1.65; margin-bottom:16px; }
+    .blog-footer { display:flex; align-items:center; justify-content:space-between; }
+    .blog-date { font-size:0.75rem; color:var(--text-muted); }
+    .blog-read-more { display:inline-flex; align-items:center; gap:5px; background:rgba(74,158,255,0.08); color:var(--blue); font-size:0.75rem; font-weight:700; padding:6px 14px; border-radius:100px; border:1px solid rgba(74,158,255,0.18); transition:background 0.2s; }
+    .blog-read-more:hover { background:var(--blue); color:#fff; }
+
+    @media (max-width:900px) {
+      .featured-post { grid-template-columns:1fr; }
+      .feat-thumb { min-height:200px; }
+      .posts-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px) {
+      .nav-links,.nav-cta { display:none; }
+      .hamburger { display:flex; }
+    }
+    @media (max-width:560px) {
+      .posts-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+    Rit <span>Motor</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Vehicles</a></li>
+    <li><a href="spare-parts.html">Spare Parts</a></li>
+    <li><a href="index.html#finance">Finance</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/919163968140?text=Hi!%20I%20want%20to%20book%20a%20vehicle%20at%20Rit%20Motor." class="btn-book-now" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Now
+    </a>
+    <a class="nav-cta" href="https://wa.me/919163968140" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="products.html">Vehicles</a><a href="spare-parts.html">Spare Parts</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="https://wa.me/919163968140" class="nav-cta" target="_blank">📅 Book Now</a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="hero-badge">📝 EV Knowledge Hub</div>
+  <h1>Tips, Guides &<br><span class="gradient-text">EV News</span></h1>
+  <p>Expert advice on electric vehicles for Indian roads — buying guides, maintenance tips, and the latest EV policy news.</p>
+</div>
+
+<!-- FILTER + POSTS -->
+<div class="blog-section">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-cat="All" onclick="filterBlog(this)">All Posts</button>
+      <button class="filter-btn" data-cat="Maintenance" onclick="filterBlog(this)">🔧 Maintenance</button>
+      <button class="filter-btn" data-cat="Buying Guide" onclick="filterBlog(this)">🛺 Buying Guide</button>
+      <button class="filter-btn" data-cat="News" onclick="filterBlog(this)">📰 News</button>
+    </div>
+
+    <!-- Featured post -->
+    <a class="featured-post reveal" href="blog-post.html?slug=benefits-of-erickshaw" data-cat="Buying Guide">
+      <div class="feat-thumb">🛺</div>
+      <div class="feat-body">
+        <div class="feat-tag">⭐ Featured · Buying Guide</div>
+        <div class="feat-title">Top 5 Benefits of E-Rickshaw for Indian Roads</div>
+        <div class="feat-excerpt">Discover why e-rickshaws are revolutionising last-mile connectivity across West Bengal — from zero fuel costs to government subsidies and massive daily earning potential for drivers.</div>
+        <div class="feat-meta">
+          <span>📅 April 2026</span>
+          <span>⏱ 5 min read</span>
+          <span>👁 1.2K views</span>
+        </div>
+        <span class="feat-read-more">Read Full Article →</span>
+      </div>
+    </a>
+
+    <!-- Blog grid -->
+    <div class="posts-grid">
+      <a class="blog-card reveal" href="blog-post.html?slug=maintain-escooter-battery" data-cat="Maintenance">
+        <div class="blog-thumb">🔋</div>
+        <div class="blog-body">
+          <div class="blog-cat">🔧 Maintenance</div>
+          <div class="blog-title">How to Maintain Your E-Scooter Battery for Longer Life</div>
+          <div class="blog-excerpt">Simple tips to extend your battery life by up to 40% and save thousands in replacement costs.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 March 2026</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card reveal reveal-delay-1" href="blog-post.html?slug=ev-future-india" data-cat="News">
+        <div class="blog-thumb">🌱</div>
+        <div class="blog-body">
+          <div class="blog-cat">📰 News</div>
+          <div class="blog-title">Why Electric Vehicles Are the Future of India</div>
+          <div class="blog-excerpt">Government subsidies, falling battery prices — why switching to EV is the smartest financial decision right now.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 February 2026</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card reveal reveal-delay-2" href="blog-post.html?slug=charge-ev-efficiently" data-cat="Maintenance">
+        <div class="blog-thumb">🔌</div>
+        <div class="blog-body">
+          <div class="blog-cat">🔧 Maintenance</div>
+          <div class="blog-title">How to Charge Your EV Efficiently: 7 Expert Tips</div>
+          <div class="blog-excerpt">Charging habits that extend battery life, reduce electricity bills, and keep your vehicle running at peak performance.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 January 2026</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card reveal reveal-delay-3" href="blog-post.html?slug=govt-subsidy-ev" data-cat="News">
+        <div class="blog-thumb">🏛️</div>
+        <div class="blog-body">
+          <div class="blog-cat">📰 News</div>
+          <div class="blog-title">West Bengal EV Subsidy 2026: Everything You Need to Know</div>
+          <div class="blog-excerpt">Updated guide to state and central government subsidies available for e-rickshaw and e-scooter buyers in West Bengal.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 December 2025</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card reveal reveal-delay-4" href="blog-post.html?slug=erickshaw-vs-petrol" data-cat="Buying Guide">
+        <div class="blog-thumb">⚡</div>
+        <div class="blog-body">
+          <div class="blog-cat">🛺 Buying Guide</div>
+          <div class="blog-title">E-Rickshaw vs Petrol Auto: A Cost Comparison for Drivers</div>
+          <div class="blog-excerpt">A realistic comparison of running costs, maintenance, earnings, and ROI for e-rickshaw drivers vs petrol autos.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 November 2025</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-card reveal reveal-delay-5" href="blog-post.html?slug=choose-ev-battery" data-cat="Buying Guide">
+        <div class="blog-thumb">🔋</div>
+        <div class="blog-body">
+          <div class="blog-cat">🛺 Buying Guide</div>
+          <div class="blog-title">Lead-Acid vs Lithium Battery: Which EV Battery to Choose?</div>
+          <div class="blog-excerpt">A detailed comparison of battery types for Indian e-rickshaws — lifespan, cost, weight, and charging speed.</div>
+          <div class="blog-footer">
+            <div class="blog-date">📅 October 2025</div>
+            <span class="blog-read-more">Read →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Rit <span>Motor</span></a>
+        <p>West Bengal's trusted EV dealer since 2019. Expert EV advice and quality vehicles.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="social-btn" href="https://wa.me/919163968140" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><div class="footer-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Vehicles</a></li><li><a href="spare-parts.html">Spare Parts</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><div class="footer-heading">Blog Categories</div><ul class="footer-links"><li><a href="#">All Posts</a></li><li><a href="#">Maintenance</a></li><li><a href="#">Buying Guide</a></li><li><a href="#">News</a></li></ul></div>
+      <div class="footer-col"><div class="footer-heading">Contact Us</div><div class="footer-contact-item"><span class="fc-icon">📍</span><span>Uluberia, Howrah, WB</span></div><div class="footer-contact-item"><span class="fc-icon">📞</span><a href="tel:+919163968140">+91 91639 68140</a></div><div class="footer-contact-item"><span class="fc-icon">🕐</span><span>Mon–Sat 9AM–7PM</span></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Rit Motor Sales & Services. All rights reserved.</p><p>Made with ❤️ in West Bengal</p></div>
+  </div>
+  <a class="wa-fab" href="https://wa.me/919163968140" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  window.filterBlog = function (btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.featured-post, .blog-card').forEach(card => {
+      card.style.display = (cat === 'All' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  };
+</script>
+</body>
+</html>

@@ -240,4 +240,205 @@
     }, 8000);
   }
 
+  // ─── Lazy image reveal ───
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if (img.complete) { img.classList.add('loaded'); }
+    else { img.addEventListener('load', () => img.classList.add('loaded')); }
+  });
+
+  // ═══════════════════════════════════════════
+  // AI CHAT WIDGET
+  // ═══════════════════════════════════════════
+
+  const CHAT_WA = '919163968140';
+  const CLAUDE_API_KEY = ''; // ← Paste your Claude API key here when ready
+
+  // Inject HTML
+  document.body.insertAdjacentHTML('beforeend', `
+    <button id="chat-launcher" aria-label="Chat with us">
+      <span id="chat-badge"></span>
+      <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <div id="chat-panel" role="dialog" aria-label="Chat assistant">
+      <div class="chat-header">
+        <div class="chat-avatar">⚡</div>
+        <div class="chat-header-info">
+          <div class="chat-header-name">Rit Motor Assistant</div>
+          <div class="chat-header-status">Online · Replies instantly</div>
+        </div>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-quick-replies" id="chatQuickReplies"></div>
+      <div class="chat-input-row">
+        <input class="chat-input" id="chatInput" type="text" placeholder="Type your question..." autocomplete="off" />
+        <button class="chat-send-btn" id="chatSendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  `);
+
+  // ─── FAQ knowledge base ───
+  const FAQ = [
+    { q: /price|cost|rate|kitna|daam/i,       a: "Our prices start from ₹88,000 for e-rickshaws and ₹52,000 for e-scooters. Spare parts like chargers start at ₹3,500. All prices include 12% GST. Want a specific quote? I'll connect you to our team!" },
+    { q: /emi|loan|finance|kist/i,             a: "Yes! We offer easy EMI options through leading banks. Minimum down payment varies by model. Chat with our team on WhatsApp for a quick EMI calculation." },
+    { q: /warranty|guarantee/i,                a: "All our vehicles come with a 5-year warranty on the frame and 2-year warranty on the battery. Spare parts carry a 1-year warranty." },
+    { q: /location|address|shop|where|kahan/i, a: "We're located in Howrah, West Bengal. We serve Uluberia, Moubesia, Dhulasimla, 58 Gate and surrounding areas. Call us at +91 91639 68140 for exact directions." },
+    { q: /charge|charging|time|hours/i,        a: "Charging time depends on the model — e-rickshaws take 6–8 hours, e-scooters take 3–4.5 hours. All vehicles support standard 5-amp home charging." },
+    { q: /range|km|battery/i,                  a: "Our e-rickshaws offer 80–110 km range per charge. E-scooters range from 60–100 km. Range depends on load, terrain, and speed." },
+    { q: /delivery|deliver|ship/i,             a: "Vehicles are available for local pickup. For spare parts under ₹5,000, we offer Cash on Delivery within Howrah and nearby areas (2–3 working days)." },
+    { q: /cod|cash on delivery/i,              a: "Cash on Delivery is available for spare parts priced under ₹5,000 — like our Smart Charger at ₹3,500. Just add to cart and select COD at checkout!" },
+    { q: /upi|payment|pay/i,                   a: "We accept UPI, Net Banking (NEFT/IMPS/RTGS), and Cash on Delivery for eligible items. All payments are secure and instant." },
+    { q: /contact|phone|call|number/i,         a: "Call or WhatsApp us at +91 91639 68140. We're available 9 AM – 7 PM, Monday to Saturday." },
+    { q: /rickshaw|toto|passenger/i,           a: "We stock 3 e-rickshaw models: Saarthi Plus (₹1.10L), Cargo King Loader (₹1.35L), and City Rider Standard (₹88K). Which one interests you?" },
+    { q: /scooter/i,                           a: "We have 3 e-scooters: Volt X1 Pro (₹72K, app-connected), Swift Mini (₹52K, budget), and Speed Pro (₹92K, performance). Want details on any?" },
+    { q: /parts|spare|charger|motor|battery/i, a: "We stock genuine OEM spare parts: Smart Charger ₹3,500 (COD eligible!), BLDC Hub Motor ₹8,500, and Lithium Battery Pack ₹45,000. All with warranty." },
+  ];
+
+  const QUICK_REPLIES = [
+    { label: "💰 Pricing",    text: "What are your prices?" },
+    { label: "📦 COD",        text: "Do you offer cash on delivery?" },
+    { label: "⚡ E-Rickshaw",  text: "Tell me about your e-rickshaws" },
+    { label: "🛵 E-Scooter",  text: "What scooters do you have?" },
+    { label: "🏦 EMI",        text: "Do you offer EMI?" },
+    { label: "📍 Location",   text: "Where is your shop?" },
+  ];
+
+  let chatOpen = false;
+  let badgeShown = false;
+  const launcher  = document.getElementById('chat-launcher');
+  const panel     = document.getElementById('chat-panel');
+  const messages  = document.getElementById('chatMessages');
+  const input     = document.getElementById('chatInput');
+  const sendBtn   = document.getElementById('chatSendBtn');
+  const badge     = document.getElementById('chat-badge');
+  const quickReplies = document.getElementById('chatQuickReplies');
+
+  // ─── Render quick reply chips ───
+  function renderQuickReplies(list) {
+    quickReplies.innerHTML = '';
+    list.forEach(item => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-qr-btn';
+      btn.textContent = item.label;
+      btn.onclick = () => handleUserMessage(item.text);
+      quickReplies.appendChild(btn);
+    });
+  }
+
+  // ─── Add message bubble ───
+  function addMessage(text, role, typing = false) {
+    const wrapper = document.createElement('div');
+    wrapper.className = `chat-msg ${role}`;
+
+    const now = new Date();
+    const timeStr = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+
+    if (role === 'bot') {
+      wrapper.innerHTML = `
+        <div class="chat-bot-avatar">⚡</div>
+        <div>
+          <div class="chat-bubble">${typing ? '<div class="chat-typing"><span></span><span></span><span></span></div>' : text}</div>
+          <div class="chat-msg-time">${timeStr}</div>
+        </div>`;
+    } else {
+      wrapper.innerHTML = `
+        <div>
+          <div class="chat-bubble">${text}</div>
+          <div class="chat-msg-time" style="text-align:right">${timeStr}</div>
+        </div>`;
+    }
+    messages.appendChild(wrapper);
+    messages.scrollTop = messages.scrollHeight;
+    return wrapper;
+  }
+
+  // ─── Get bot reply ───
+  async function getBotReply(userMsg) {
+    // Try Claude API first if key is set
+    if (CLAUDE_API_KEY) {
+      try {
+        const res = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': CLAUDE_API_KEY,
+            'anthropic-version': '2023-06-01',
+            'anthropic-dangerous-direct-browser-access': 'true',
+          },
+          body: JSON.stringify({
+            model: 'claude-haiku-4-5-20251001',
+            max_tokens: 256,
+            system: `You are a helpful sales assistant for Rit Motor Sales & Services, an electric vehicle dealer in Howrah, India. Keep replies short (2-3 sentences max), friendly, and in the same language the customer uses (English, Bengali, or Hindi). Products: e-rickshaws (₹88K–₹1.35L), e-scooters (₹52K–₹92K), spare parts. COD available under ₹5000. WhatsApp: +91 91639 68140.`,
+            messages: [{ role: 'user', content: userMsg }]
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          return data.content[0].text;
+        }
+      } catch (e) { /* fall through to FAQ */ }
+    }
+
+    // FAQ fallback
+    for (const faq of FAQ) {
+      if (faq.q.test(userMsg)) return faq.a;
+    }
+
+    // Default
+    return `Thanks for your message! For the quickest help, reach us on WhatsApp at <a href="https://wa.me/${CHAT_WA}?text=${encodeURIComponent(userMsg)}" target="_blank" style="color:#3B82F6;font-weight:600">+91 91639 68140</a> or call us directly.`;
+  }
+
+  // ─── Handle user message ───
+  async function handleUserMessage(text) {
+    if (!text.trim()) return;
+    input.value = '';
+    quickReplies.innerHTML = '';
+    addMessage(text, 'user');
+
+    const typingBubble = addMessage('', 'bot', true);
+    await new Promise(r => setTimeout(r, 700 + Math.random() * 600));
+
+    const reply = await getBotReply(text);
+    typingBubble.remove();
+    addMessage(reply, 'bot');
+
+    // Show contextual quick replies after response
+    setTimeout(() => {
+      renderQuickReplies([
+        { label: '📞 Call us',    text: 'I want to call you' },
+        { label: '💬 WhatsApp',  text: 'Contact on WhatsApp' },
+        { label: '🛒 Products',  text: 'Show me your products' },
+      ]);
+    }, 300);
+  }
+
+  // ─── Toggle chat ───
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    launcher.classList.toggle('open', chatOpen);
+    panel.classList.toggle('open', chatOpen);
+    badge.classList.remove('show');
+    badgeShown = true;
+    if (chatOpen && messages.children.length === 0) {
+      // Welcome message on first open
+      setTimeout(() => addMessage('👋 नमस्কার! Hi! আমি Rit Motor-এর AI assistant। How can I help you today?', 'bot'), 300);
+      setTimeout(() => renderQuickReplies(QUICK_REPLIES), 900);
+    }
+    if (chatOpen) input.focus();
+  }
+
+  launcher.addEventListener('click', toggleChat);
+  sendBtn.addEventListener('click', () => handleUserMessage(input.value));
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') handleUserMessage(input.value); });
+
+  // Show badge after 4 seconds to invite engagement
+  setTimeout(() => {
+    if (!chatOpen) {
+      badge.textContent = '1';
+      badge.classList.add('show');
+    }
+  }, 4000);
+
 })();
