@@ -27,13 +27,14 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     body::before { content:''; position:fixed; width:500px; height:500px; background:radial-gradient(circle,#4A9EFF 0%,transparent 70%); top:-100px; right:-100px; border-radius:50%; pointer-events:none; z-index:0; filter:blur(80px); opacity:0.06; }
 
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s var(--spring); }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-    .reveal-delay-1 { transition-delay:0.1s; }
-    .reveal-delay-2 { transition-delay:0.2s; }
-    .reveal-delay-3 { transition-delay:0.3s; }
-    .reveal-delay-4 { transition-delay:0.4s; }
-    .reveal-delay-5 { transition-delay:0.5s; }
+    @keyframes revealUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+    .reveal { animation:revealUp 0.55s ease both; }
+    .reveal.visible { opacity:1; transform:none; }
+    .reveal-delay-1 { animation-delay:0.08s; }
+    .reveal-delay-2 { animation-delay:0.16s; }
+    .reveal-delay-3 { animation-delay:0.24s; }
+    .reveal-delay-4 { animation-delay:0.32s; }
+    .reveal-delay-5 { animation-delay:0.40s; }
 
     /* Navbar */
     .navbar { position:fixed; top:16px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:1200px; z-index:1000; background:rgba(245,247,250,0.65); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--glass-border); border-radius:100px; padding:11px 18px; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow); transition:background 0.4s,box-shadow 0.4s,padding 0.3s; }

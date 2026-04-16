@@ -455,6 +455,33 @@
     .card-badge.sale   { color: var(--mint-dark); }
     .card-badge.stock  { color: #F59E0B; }
 
+    /* Coming Soon overlay */
+    .cs-overlay-badge {
+      position: absolute; top: 12px; right: 12px; z-index: 5;
+      background: #FF6B35; color: #fff;
+      font-size: 0.68rem; font-weight: 800;
+      padding: 4px 12px; border-radius: 100px;
+      letter-spacing: 0.6px; text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(255,107,53,0.45);
+      pointer-events: none;
+    }
+    .product-card.coming-soon {
+      opacity: 0.75;
+    }
+    .product-card.coming-soon:hover {
+      transform: none !important;
+      box-shadow: var(--shadow) !important;
+      border-color: var(--glass-border) !important;
+    }
+    .coming-soon-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #e5e7eb; color: #9ca3af;
+      font-size: 0.8rem; font-weight: 700;
+      padding: 10px 18px; border-radius: 100px;
+      border: none; cursor: not-allowed;
+      font-family: inherit; flex-shrink: 0;
+    }
+
     /* Card body */
     .card-body {
       padding: 22px 22px 20px;
@@ -984,7 +1011,8 @@
         </div>
 
         <!-- ─ E-SCOOTER 1 ─ -->
-        <div class="product-card" data-category="e-scooter" data-price="72000">
+        <div class="product-card coming-soon" data-category="e-scooter" data-price="72000">
+          <span class="cs-overlay-badge">Coming Soon</span>
           <div class="card-thumb bg-blue">
             <img class="card-img" src="images/volt-x1.jpg" alt="Volt X1 Pro Scooter" onerror="this.style.display='none'">
             <span class="card-emoji">🛵</span>
@@ -1005,16 +1033,14 @@
                 <div class="card-price-label">Starting from</div>
                 <div class="card-price">₹72,000</div>
               </div>
-              <a href="checkout.html?product=Volt%20X1%20Pro%20Scooter&category=E-Scooter%20%C2%B7%20Premium&emoji=%F0%9F%9B%B5&price=72000" class="enquire-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                Buy Now
-              </a>
+              <button class="coming-soon-btn" disabled>Coming Soon</button>
             </div>
           </div>
         </div>
 
         <!-- ─ E-SCOOTER 2 ─ -->
-        <div class="product-card" data-category="e-scooter" data-price="52000">
+        <div class="product-card coming-soon" data-category="e-scooter" data-price="52000">
+          <span class="cs-overlay-badge">Coming Soon</span>
           <div class="card-thumb bg-amber">
             <img class="card-img" src="images/swift-mini.jpg" alt="Swift Mini Scooter" onerror="this.style.display='none'">
             <span class="card-emoji">🛵</span>
@@ -1035,16 +1061,14 @@
                 <div class="card-price-label">Starting from</div>
                 <div class="card-price">₹52,000</div>
               </div>
-              <a href="checkout.html?product=Swift%20Mini%20Scooter&category=E-Scooter%20%C2%B7%20Standard&emoji=%F0%9F%9B%B5&price=52000" class="enquire-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                Buy Now
-              </a>
+              <button class="coming-soon-btn" disabled>Coming Soon</button>
             </div>
           </div>
         </div>
 
         <!-- ─ E-SCOOTER 3 ─ -->
-        <div class="product-card" data-category="e-scooter" data-price="92000">
+        <div class="product-card coming-soon" data-category="e-scooter" data-price="92000">
+          <span class="cs-overlay-badge">Coming Soon</span>
           <div class="card-thumb bg-rose">
             <img class="card-img" src="images/speed-pro.jpg" alt="Speed Pro Performance" onerror="this.style.display='none'">
             <span class="card-emoji">⚡</span>
@@ -1065,10 +1089,7 @@
                 <div class="card-price-label">Starting from</div>
                 <div class="card-price">₹92,000</div>
               </div>
-              <a href="checkout.html?product=Speed%20Pro%20Performance&category=E-Scooter%20%C2%B7%20Performance&emoji=%E2%9A%A1&price=92000" class="enquire-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                Buy Now
-              </a>
+              <button class="coming-soon-btn" disabled>Coming Soon</button>
             </div>
           </div>
         </div>

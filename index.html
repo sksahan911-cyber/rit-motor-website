@@ -72,14 +72,21 @@
       bottom: 10%; left: -150px;
     }
 
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s var(--spring); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    /* Reveal — CSS-only, no scroll/JS dependency */
+    @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    .reveal { animation: revealUp 0.55s ease both; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { animation-delay: 0.08s; }
+    .reveal-delay-2 { animation-delay: 0.16s; }
+    .reveal-delay-3 { animation-delay: 0.24s; }
+    .reveal-delay-4 { animation-delay: 0.32s; }
+    .reveal-delay-5 { animation-delay: 0.40s; }
+
+    /* Coming Soon */
+    .coming-soon-card { opacity: 0.75; pointer-events: none; }
+    .coming-soon-card .vehicle-cta { background: #e5e7eb !important; color: #9ca3af !important; box-shadow: none !important; cursor: not-allowed; }
+    .coming-soon-card:hover { transform: none !important; box-shadow: var(--shadow) !important; }
+    .cs-badge { position: absolute; top: 12px; right: 12px; background: #FF6B35; color: #fff; font-size: 0.68rem; font-weight: 800; padding: 4px 12px; border-radius: 100px; letter-spacing: 0.6px; text-transform: uppercase; z-index: 3; box-shadow: 0 2px 8px rgba(255,107,53,0.4); pointer-events: none; }
 
     /* ─── NAVBAR ─── */
     .navbar {
@@ -506,7 +513,8 @@
           </div>
         </div>
       </div>
-      <div class="vehicle-card">
+      <div class="vehicle-card coming-soon-card" style="position:relative">
+        <span class="cs-badge">Coming Soon</span>
         <div class="vehicle-thumb purple-bg">
           <div class="vehicle-thumb-icon">🛵</div>
           <div class="vehicle-badge">🔥 Hot Deal</div>
@@ -521,7 +529,7 @@
           </div>
           <div class="vehicle-price">
             <div><div class="price-label">Starting at</div><div class="price-val">₹72,000</div></div>
-            <a href="product-detail.html" class="vehicle-cta">View Details →</a>
+            <span class="vehicle-cta" style="cursor:not-allowed">Coming Soon</span>
           </div>
         </div>
       </div>
