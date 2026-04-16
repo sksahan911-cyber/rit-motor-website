@@ -21,10 +21,17 @@ body { transition: opacity 0.2s ease; }
 body.page-out { opacity: 0 !important; }
 
 /* ─── LOGO TEXT + SUBTITLE ─── */
+/* Prevent nav-logo from shrinking or wrapping in any viewport */
+.nav-logo {
+  flex-shrink: 0 !important;
+  min-width: 160px !important;
+  white-space: nowrap !important;
+}
 .logo-text {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 .logo-sub {
   font-size: 0.5rem;
@@ -33,6 +40,8 @@ body.page-out { opacity: 0 !important; }
   letter-spacing: 0.8px;
   text-transform: uppercase;
   margin-top: 1px;
+  white-space: nowrap;
+  display: block;
 }
 /* Footer logo subtitle inherits, slightly lighter */
 .footer-logo .logo-sub {
