@@ -20,6 +20,25 @@
 body { transition: opacity 0.2s ease; }
 body.page-out { opacity: 0 !important; }
 
+/* ─── LOGO TEXT + SUBTITLE ─── */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.logo-sub {
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: rgba(100, 116, 139, 0.85);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+/* Footer logo subtitle inherits, slightly lighter */
+.footer-logo .logo-sub {
+  color: rgba(148, 163, 184, 0.75);
+}
+
 /* ─── ENHANCED NAVBAR ─── */
 .navbar { transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease, border-color 0.4s ease !important; }
 

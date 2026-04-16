@@ -206,7 +206,7 @@
   if (!sessionStorage.getItem('wa-cta-dismissed')) {
     const banner = document.createElement('a');
     banner.id = 'wa-cta-banner';
-    banner.href = 'https://wa.me/919163968140?text=Hi!%20I%20need%20help%20choosing%20an%20electric%20vehicle%20from%20Expreso.';
+    banner.href = 'https://wa.me/919163968140?text=Hi%20Expreso%20(RIT%20ENTERPRISE)!%20I%20need%20help%20choosing%20an%20electric%20vehicle%20from%20Expreso.';
     banner.target = '_blank';
     banner.rel = 'noopener noreferrer';
     banner.setAttribute('aria-label', 'Chat with Expreso on WhatsApp');
